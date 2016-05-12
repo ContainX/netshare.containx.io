@@ -1,0 +1,27 @@
+sudo: required
+
+language: node_js
+node_js:
+  - "5"
+
+services:
+  - docker
+
+install:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker build -t containx/netshare-site .
+  - docker tag containx/netshare-site containx/netshare-site:$TRAVIS_BUILD_NUMBER
+  - docker run -d -p 127.0.0.1:80:80 --name netshare containx/netshare-site
+
+script:
+  - docker ps | grep -q netshare
+
+after_success:
+  - docker push containx/netshare-site
+  - docker push containx/netshare-site:$TRAVIS_BUILD_NUMBER
+  - docker run -e DEPCON_MODE=$DEPCON_MODE -e MARATHON_HOST=$MARATHON_HOST -e MARATHON_USER=$MARATHON_USER -e MARATHON_PASS=$MARATHON_PASS -v $PWD:/data containx/depcon app create /data/depcon.yml -p VERSION=$TRAVIS_BUILD_NUMBER --wait --force
+
+# whitelist
+branches:
+  only:
+    - master
