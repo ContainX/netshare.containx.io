@@ -258,11 +258,11 @@ pre {
 
 .index-header, .content-header {
   background-color: $header-color;
-  background-image: -o-linear-gradient(top, $header-color 0%, $header-color-dark 62%);
-	background-image: -moz-linear-gradient(top, $header-color 0%, $header-color-dark 62%);
-	background-image: -webkit-linear-gradient(top, $header-color 0%, $header-color-dark 62%);
-	background-image: -ms-linear-gradient(top, $header-color 0%, $header-color-dark 62%);
-	background-image: linear-gradient(to top, $header-color 0%, $header-color-dark 62%);
+  background-image: -o-linear-gradient(top, $header-color 0%, $header-color-dark 85%);
+	background-image: -moz-linear-gradient(top, $header-color 0%, $header-color-dark 85%);
+	background-image: -webkit-linear-gradient(top, $header-color 0%, $header-color-dark 85%);
+	background-image: -ms-linear-gradient(top, $header-color 0%, $header-color-dark 85%);
+	background-image: linear-gradient(to top, $header-color 0%, $header-color-dark 85%);
   h1, h2, h3, h4, h5 {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
