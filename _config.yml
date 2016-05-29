@@ -10,7 +10,7 @@ kramdown:
   syntax_highlighter_opts:
     disable : true
 
-depcon-version: 0.16
+depcon-version: 0.18
 repo-org: ContainX
 repo-name: docker-volume-netshare
 
