@@ -57,7 +57,7 @@ volumes:
   data:
     driver: cifs
     driver_opts:
-      share: cifshost:/share
+      share: cifshost/share
 
 services:
   hello:
