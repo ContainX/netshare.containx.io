@@ -11,7 +11,7 @@ install:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker build -t containx/netshare-site .
   - docker tag containx/netshare-site containx/netshare-site:$TRAVIS_BUILD_NUMBER
-#  - docker run -d -p 127.0.0.1:80:80 --name netshare containx/netshare-site
+  - docker run -d -p 127.0.0.1:80:80 --name netshare containx/netshare-site
 
 script:
   - docker ps | grep -q netshare
